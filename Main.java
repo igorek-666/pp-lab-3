@@ -1,9 +1,15 @@
+import geometry.Circle;
+import geometry.Point;
+
 public class Main {
     public static void main(String[] args) {
-        Point point = new Point(3.5, 2.5); //inicjujemy wspolrzedne
-        //wyswietlamy wspolrzedne
-        System.out.println("Współrzędne:");
-        System.out.println("x = " +point.getX()); 
-        System.out.println("y = " +point.getY());
-    } 
+        Point center = new Point(3.5, 2.5);
+        Circle circle = new Circle(center, 7.0);
+        // Wyświetlanie właściwości koła
+        System.out.println("Właściwości koła:");
+        System.out.println("Promień: " + circle.getRadius());
+        System.out.println("Środek: (" + circle.getCenter().getX() + ", " + circle.getCenter().getY() + ")");
+        System.out.println("Obwód: " + circle.calculatePerimeter());
+        System.out.println("Pole: " + circle.getArea());
+    }
 }
