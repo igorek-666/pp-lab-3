@@ -1,12 +1,13 @@
-import geometry.Rectangle;
+import geometry.Square;
 
 public class Main {
     public static void main(String[] args) {
-       Rectangle rectangle = new Rectangle(5.0, 12.0);
-       double pole = rectangle.calculateArea();
-       double obwod = rectangle.calculatePerimeter();
+    Square square = new Square(4.0);
 
-       System.out.println("Pole: " + pole);
-       System.out.println("Obwód: " + obwod);
+    double pole = square.calculateArea();
+    double obwod =  square.calculatePerimeter();
+
+    System.out.println("Pole: " + pole);
+    System.out.println("Obwód: " + obwod);
     } 
 }
