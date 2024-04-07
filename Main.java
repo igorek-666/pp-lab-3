@@ -1,19 +1,20 @@
-import geometry.ColoredCircle;
 import geometry.Point;
-
+import geometry.Circle;
+import geometry.ColoredCircle;
 public class Main {
     public static void main(String[] args) {
-        Point center = new Point(3.5, 2.5);
-        ColoredCircle coloredCircle = new ColoredCircle(center, 7.0, "violet");
+        Circle[] circles = new Circle[3];
+        circles[0] = new Circle(new Point(3.5, 2.5), 7.0);
+        circles[1] = new ColoredCircle(new Point(4.5, 6.0), 8.0, "violet");
+        circles[2] = new ColoredCircle(new Point(2.0, 3.5), 10, "pink");
 
-        // Wyświetlanie właściwości koła
-        System.out.println("Właściwości kolorowego koła:");
-        System.out.println("Promień: " + coloredCircle.getRadius());
-        System.out.println("Środek: (" + coloredCircle.getCenter().getX() + ", " + coloredCircle.getCenter().getY() + ")");
-        System.out.println("Obwód: " + coloredCircle.calculatePerimeter());
-        System.out.println("Pole: " + coloredCircle.getArea());
-        //nowa wlasciwiosc - kolor
-        System.out.println("Kolor: " + coloredCircle.getColor());
-
-    }
+        for (int i = 0; i < circles.length; i++) {
+            double area = circles[i].getArea();
+            System.out.println("Pole tego koła: " + area);
+            if (circles[i] instanceof ColoredCircle) {
+                String color = ((ColoredCircle) circles[i]).getColor();
+                System.out.println("Kolor koła: " + color);
+            }
+        }
+    } 
 }
